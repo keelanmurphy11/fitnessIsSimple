@@ -1,0 +1,289 @@
+.header {
+    display: flex; 
+    justify-content: space-between; /* Spaces evenly */
+    align-items: center; /* Vertically centers items */
+    padding: 40px 5vw; /* Adds padding around the header */
+    background-color: #fff; /* White background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: fixed; /* Fixes header at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the screen*/
+    box-sizing: border-box;
+    height: 70px; /* Fixed height, stays same even as screen width shrinks */
+    z-index: 1000; /* Ensures it stays above all other elements */
+}
+
+
+.logo {
+    font-family: Georgia, fantasy; 
+    font-size: min(3vw, 24px); /* uses smallest value between 3vw and 24px */
+    font-weight: bold;
+    color: black;
+    flex-shrink: 1; /* Allows logo to shrink if necessary */
+    transition: font-size 0.3s ease; /* Smooth resizing effect */
+}
+
+
+.logo span {
+    color: #fff; /* White text */
+    text-shadow:
+        0 0 5px rgb(30, 255, 0),
+        0 0 10px rgb(30, 255, 0),
+        0 0 20px rgb(30, 255, 0),
+        0 0 40px rgb(30, 255, 0),
+        0 0 80px rgb(30, 255, 0); /* Neon green glow effect */
+    padding-left: 3px;
+    text-align: center;
+}
+
+
+.nav {
+    display: flex;
+    justify-content: space-evenly; /* Even spacing between items */
+    flex: 1; /* Takes up remaining horizontal space after the logo*/
+    margin-left: 20px; /*between logo*/
+    gap: 10px; /* minimum Space between nav items */
+}
+
+.nav-item {
+    position: relative; /*for positioning dropdowns */
+}
+
+
+.nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+}
+
+.nav a:hover { /*when user hovers over link*/
+    text-decoration: underline;
+    text-decoration-color: #ff6600; /* Orange underline on hover */
+}
+
+
+.dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute; /*compared to parent*/
+    top: 100%; /* Positioned just below nav item */
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    display: none; /* Hidden by default */
+    min-width: 150px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu li {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    background: white;
+}
+
+.dropdown-menu a:hover {
+    background: #f0f0f0; /* Light grey on hover */
+}
+
+
+.nav-item:hover .dropdown-menu { /*Display the dropdown on hover*/
+    display: block;
+}
+
+
+.content {
+    margin-top: 100px; /* Accounts for fixed header */
+    padding: 20px;
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 40px 20px;
+}
+
+
+.container { /*General styling for main content*/
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px 20px 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+h2 {
+    color: #ff6600;
+    margin-top: 40px;
+    font-size: 1.5em;
+}
+
+h3 {
+    color: #333;
+    border-left: 5px solid #ff6600;
+    padding-left: 15px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+h4 {
+    color: #00897b;
+}
+
+
+p {
+    margin-bottom: 20px;
+}
+
+a {
+    color: #0000FF;
+    text-decoration: none;
+}
+
+h4 a {
+    color: #00897b;
+    text-decoration: none;
+    margin-left: 5%;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+.bold {
+    font-weight: bold;
+}
+
+.brackets {
+    font-size: 0.8em;
+}
+
+
+.highlight-box {
+    background: #e6fcff;
+    border-left: 6px solid #00aaff;
+    padding: 15px 20px;
+    margin: 30px 0;
+    border-radius: 8px;
+}
+
+.note-box {
+    background: #fff8e6;
+    border-left: 6px solid #ffaa00;
+    padding: 15px 20px;
+    margin: 30px 0;
+    border-radius: 8px;
+}
+
+.summary-box {
+    background: #e0f7f4;
+    border-left: 6px solid #00897b;
+    padding: 15px 20px;
+    margin: 30px 0;
+    border-radius: 8px;
+}
+
+
+.wrap { /*Wrap around images*/
+    float: right;
+    margin-left: 10px; 
+    width: 50%;
+}
+
+
+@media (max-width: 600px) { /*for small screens, no wrap images takes full screen*/
+    .wrap {
+        float: none;
+        display: block;
+        margin: 0 auto 10px auto;
+        width: 80%;
+    }
+}
+
+
+table {
+    width: 95%;
+    border-collapse: collapse; /*Avoids double border*/
+    margin: 0 auto;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+td:first-child, th:first-child {
+    width: 40%;
+}
+
+td, th {
+    width: 15%;
+}
+
+
+@media (max-width: 600px) { /*changes with window width*/
+    td, th {
+        font-size: 14px;
+    }
+}
+
+
+.intermediate {
+    color: #5fbaf7;
+    font-style: italic;
+}
+
+
+.image-container {
+    text-align: center;
+    position: relative;
+}
+
+
+.image-bar {
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+    object-position: bottom; /*Crops the top*/
+}
+
+.overlay {
+    position: absolute;
+    top: 50%; /*Following four line: places top left corner of text in the centre then shifts it back and up by half the texts size to fully centre it*/
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3em;
+    text-align: center;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    width: 90vw;
+}
